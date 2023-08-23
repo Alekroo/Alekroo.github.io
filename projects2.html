@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Website</title>
+  <link href="style.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/fd631402c6.js" crossorigin="anonymous"></script>
+  
+
+
+</head>
+
+<body>
+<div id="header" style="background: black;">
+    <div class="container">
+        <nav>
+            <img src="images/logo.png" class="logo" alt="logo">
+            <ul>
+                <li><a href="index.html#header">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#portfolio">Portofolio</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="tab-titles">
+        <p class="tab-links" id="java-link" onclick="opentab('java')">Java</p>
+        <p class="tab-links" id="python-link" onclick="opentab('python')">Python</p>
+        <p class="tab-links" id="sql-link" onclick="opentab('sql')">SQL</p>
+        <p class="tab-links" id="others-link" onclick="opentab('others')">Others</p>
+    </div>
+    <div class="tab-contents" id="java">
+        <div class="project-list">
+            <div>
+                <i class="fa-solid fa-person-walking"></i>
+                <h2>TripTracker</h2>
+                <p>Android based application that identifies trips by using smartphone sensors</p>
+                <a href="projects.html">See project</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-java"></i>
+                <h2>Java</h2>
+                <p>Mauris laoreet rhoncus tempus. Morbi tincidunt neque id sapien sagittis</p>
+                <a href="projects.html">See projects</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-database"></i>
+                <h2>SQL</h2>
+                <p>Mauris laoreet rhoncus tempus. Morbi tincidunt neque id sapien sagittis</p>
+                <a href="projects.html">See projects</a>
+            </div>
+        </div>
+    </div>
+    <div class="tab-contents" id="python">
+        <div class="project-list">
+            <div>
+                <i class="fa-brands fa-python"></i>
+                <h2>Python</h2>
+                <p>Mauris laoreet rhoncus tempus. Morbi tincidunt neque id sapien sagittis</p>
+                <a href="projects.html">See projects</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-java"></i>
+                <h2>Java</h2>
+                <p>Mauris laoreet rhoncus tempus. Morbi tincidunt neque id sapien sagittis</p>
+                <a href="projects.html">See projects</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-database"></i>
+                <h2>SQL</h2>
+                <p>Mauris laoreet rhoncus tempus. Morbi tincidunt neque id sapien sagittis</p>
+                <a href="projects.html">See projects</a>
+            </div>
+        </div>
+    </div>
+    <div class="tab-contents" id="sql">
+        <div class="project-list">
+            <div>
+                <i class="fa-brands fa-python"></i>
+                <h2>FPython</h2>
+                <p>Mauris laoreet rhoncus tempus. Morbi tincidunt neque id sapien sagittis</p>
+                <a href="projects.html">See projects</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-java"></i>
+                <h2>Java</h2>
+                <p>Mauris laoreet rhoncus tempus. Morbi tincidunt neque id sapien sagittis</p>
+                <a href="projects.html">See projects</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-database"></i>
+                <h2>SQL</h2>
+                <p id="result">Mauris laoreet rhoncus tempus. Morbi tincidunt neque id sapien sagittis</p>
+                <a href="projects.html">See projects</a>
+            </div>
+        </div>
+    </div>
+    <div class="tab-contents" id="others">
+        <div class="project-list">
+            <div>
+                <i class="fa-brands fa-python"></i>
+                <h2>FPython</h2>
+                <p>Mauris laoreet rhoncus tempus. Morbi tincidunt neque id sapien sagittis</p>
+                <a href="projects.html">See projects</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-java"></i>
+                <h2>Java</h2>
+                <p>Mauris laoreet rhoncus tempus. Morbi tincidunt neque id sapien sagittis</p>
+                <a href="projects.html">See projects</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-database"></i>
+                <h2>SQL</h2>
+                <p id="result">Mauris laoreet rhoncus tempus. Morbi tincidunt neque id sapien sagittis</p>
+                <a href="projects.html">See projects</a>
+            </div>
+    </div>
+    
+    <script>
+            window.addEventListener('DOMContentLoaded', (event) => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const query = urlParams.get('type');
+            
+
+            document.getElementById(query + '-link').classList.add("active-link");
+            document.getElementById(query).classList.add("active-tab");
+            
+        });
+
+
+    </script>
+ 
+</div>
+
+
+    <div class="copyright">
+        <p>Copyright © Kevin. Made with Kevin the Man.</p>
+    </div>
+</div>
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+
+        const newURL = window.location.origin + window.location.pathname + '?type=' + tabname;
+            
+        // Update the URL
+        window.history.pushState({ path: newURL }, '', newURL);
+
+    }
+
+    var i = 0;
+    var txt = 'Lorem ipsum typing effect!'; /* The text */
+    var speed = 50; /* The speed/duration of the effect in milliseconds */
+
+    
+    function typeWriter() {
+    if (i < txt.length) {
+        document.getElementById("demo").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+    }
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const type1 = urlParams.get('type');
+
+    function writeTest() {
+        document.write(type1);
+    }
+
+
+
+</script>
+
+</body>
+</html>

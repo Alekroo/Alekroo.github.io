@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Website</title>
+  <link href="style.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/fd631402c6.js" crossorigin="anonymous"></script>
+  
+</head>
+
+<body class="black-body">
+<div id="header">
+    <div class="container">
+        <nav>
+            <a href="index.html#header"><img src="images/logo.png" class="logo" alt="logo"/></a>
+            <ul id = "sidemenu">
+                <li><a href="index.html#header">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Skills</a></li>
+                <li><a href="index.html#portfolio">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <i class="fa-solid fa-circle-xmark" onclick="closemenu()" style="color: #ffffff;"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()" style="color: #ffffff;"></i>
+        </nav>
+    </div>
+
+  <div class="container4">
+    <div class="text2">
+      <h1>Mystic Realm</h1>
+      <p><br>My 2D-roleplaying game developed in python using pygame. The goal of this game is to develop your character, collect items, explore the world, fight monsters and save the kingdom from a warlock invasion!<br><br>Check this project out on GitHub: <a href="https://github.com/A1ekr0/Mystic_Realm">https://github.com/A1ekr0/Mystic_Realm</a></p>
+      <div class="image-container">
+        <img src="images/img1.png" alt="Image 1" onclick="toggleFullscreen(this)">
+        <img src="images/img2.png" alt="Image 1" onclick="toggleFullscreen(this)">
+        <img src="images/img3.png" alt="Image 1" onclick="toggleFullscreen(this)">
+        <img src="images/img4.png" alt="Image 1" onclick="toggleFullscreen(this)">
+      </div>
+    </div>
+    
+    <div class="video-container">
+      <h2 class="video-title">Demonstration Video</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bbLM_5XfwHo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+
+</div>
+<div class="copyright">
+    <p>Copyright © 2023 Aleksander Krolikowski.</p>
+</div>
+
+
+<script>
+    function toggleFullscreen(image) {
+      if (!document.fullscreenElement) {
+        image.requestFullscreen().catch(err => {
+          console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+    var i = 0;
+    var txt = 'Lorem ipsum typing effect!'; /* The text */
+    var speed = 50; /* The speed/duration of the effect in milliseconds */
+
+    
+    function typeWriter() {
+    if (i < txt.length) {
+        document.getElementById("demo").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+    }
+    }
+
+
+
+</script>
+
+</body>
+</html>
