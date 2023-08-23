@@ -606,6 +606,20 @@ nav .fa-solid{
         flex-basis: 100%;
     }
 
+    .about-col-2 {
+    flex-basis: 100%;
+    }
+
+    .about-box {
+        margin-top: 7%;
+        padding: 5%;
+    }
+
+    .about-box p {
+        padding-bottom: 2%;
+    }
+
+
     .tab-titles {
         display: flex;
         padding-top: 20%;
@@ -645,6 +659,15 @@ nav .fa-solid{
     height: 300px;
   }
 
+  .contact-right {
+    margin-top: 3%;
+    flex-basis: 100%;
+  }
+
+    .contact-left {
+    margin-top: 3%;
+    flex-basis: 100%;
+  }
 
 }
 
