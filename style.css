@@ -584,6 +584,10 @@ form .btn2 {
     margin-bottom: 15px;
 }
 
+.category-list p {
+    font-size: 14px;
+}
+
 .category-list a div{
     text-decoration: none;
     color: white;
